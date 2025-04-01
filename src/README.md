@@ -14,6 +14,7 @@ AmqpMessageReceiver is a .NET library for receiving messages from AMQP brokers (
 Install the package via NuGet:
 
 ```sh
+dotnet add package AmqpClientInject
 dotnet add package AmqpMessageReceiver
 ```
 
@@ -36,6 +37,13 @@ using AmqpMessageReceiver;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddHostedService<Worker>();
+services.AddAmqpClient(options =>
+{
+    options.Host = "localhost";
+    options.Port = 5672;
+    options.UserName = "guest";
+    options.Password = "guest";
+});
 builder.Services.AddMessageReceiver(options =>
 {
     options.Address = "my-queue";
