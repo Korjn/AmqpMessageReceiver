@@ -121,8 +121,8 @@ internal class MessageReceiver(ILogger<IAmqpClient> logger, IOptions<MessageRece
         writer.Complete();
     }
 
-    public async Task ExecuteAsync(Func<MessageContext, Task> processMessage,
-                                   IAmqpClient client,
+    public async Task ExecuteAsync(IAmqpClient client,
+                                   Func<MessageContext, Task> processMessage,                                   
                                    CancellationToken stoppingToken)
     {
         // Проверяем, заданы ли параметры
