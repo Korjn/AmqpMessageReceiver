@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net9.0</TargetFramework>
+    <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
 
@@ -10,7 +10,7 @@
     <PublishRelease>true</PublishRelease>
     <PackageId>Korjn.AmqpMessageReceiver</PackageId>
     <Authors>Saken</Authors>
-    <Version>9.0.0</Version>    
+    <Version>10.0.0</Version>    
     <PackageLicenseExpression>MIT</PackageLicenseExpression>    
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <Description>AMQP Message Receiver is a high-performance, fault-tolerant .NET library for receiving and processing AMQP messages asynchronously. </Description>
@@ -20,13 +20,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Korjn.AmqpClientInject" Version="9.0.0" PrivateAssets="none" />
-    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="9.0.3" PrivateAssets="none" />
-    <PackageReference Include="Microsoft.Extensions.Options" Version="9.0.3" PrivateAssets="none" />
+    <PackageReference Include="Korjn.AmqpClientInject" Version="10.0.0" PrivateAssets="none" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="10.0.0" PrivateAssets="none" />
+    <PackageReference Include="Microsoft.Extensions.Options" Version="10.0.0" PrivateAssets="none" />
   </ItemGroup>
 
   <ItemGroup>    
-    <None Include="../README.md" Pack="true" PackagePath=""/>
+    <None Include="../README.md" Pack="true" PackagePath="" />
   </ItemGroup>
 
 </Project>

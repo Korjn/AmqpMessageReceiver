@@ -142,7 +142,7 @@ internal class MessageReceiver(ILogger<IAmqpClient> logger, IOptions<MessageRece
         var queue = Channel.CreateBounded<MessageContext>(channelOptions);
 
         // Запускаем обработчики сообщений в нескольких потоках
-        var сonsumeTasks = Enumerable.Range(0, options.MaxConcurrency)
+        var consumeTasks = Enumerable.Range(0, options.MaxConcurrency)
                                      .Select(_ => ConsumeAsync(queue.Reader, processMessage, stoppingToken))
                                      .ToList();
 
@@ -150,6 +150,6 @@ internal class MessageReceiver(ILogger<IAmqpClient> logger, IOptions<MessageRece
         await ReceiveLoopAsync(queue.Writer, client, stoppingToken);
 
         // Дожидаемся завершения всех обработчиков
-        await Task.WhenAll(сonsumeTasks);
+        await Task.WhenAll(consumeTasks);
     }
 }

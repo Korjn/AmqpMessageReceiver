@@ -28,7 +28,7 @@ public sealed class MessageContext
         }
         else
         {
-            receiver.Modify(Message, true, false); // Повторная доставка
+            receiver.Modify(Message, true); // Повторная доставка
         }
     }
 }
